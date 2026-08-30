@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  # Allows triggering a deploy manually from the Actions tab.
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Cloudflare Workers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    # Required repository secrets (Settings -> Secrets and variables -> Actions):
+    #   CLOUDFLARE_API_TOKEN   - a Workers-scoped API token (see README)
+    #   CLOUDFLARE_ACCOUNT_ID  - your Cloudflare account id
+    #
+    # This workflow deploys the Worker's code only. Secrets such as
+    # TELEGRAM_BOT_TOKEN must be set once, separately, with
+    # `wrangler secret put <NAME>` (see README) — they are not managed
+    # by this workflow.
