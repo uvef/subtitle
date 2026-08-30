@@ -1,0 +1,25 @@
+{
+  "name": "telegram-persian-subtitle-bot",
+  "version": "1.0.0",
+  "description": "A Cloudflare Workers-based Telegram bot that searches for and delivers Persian movie/TV subtitles.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "vitest": "^4.0.0",
+    "wrangler": "^4.0.0"
+  }
+}

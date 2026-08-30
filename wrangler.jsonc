@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "telegram-persian-subtitle-bot",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-30",
+
+  // Workers KV namespace used to store short-lived callback references
+  // (see src/kv.js). Create it with:
+  //   npx wrangler kv namespace create SUBS_KV
+  //   npx wrangler kv namespace create SUBS_KV --preview
+  // then replace the placeholder ids below with the ones it prints.
+  "kv_namespaces": [
+    {
+      "binding": "SUBS_KV",
+      "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID",
+      "preview_id": "REPLACE_WITH_YOUR_KV_PREVIEW_NAMESPACE_ID"
+    }
+  ],
+
+  // Non-secret configuration. Secrets (TELEGRAM_BOT_TOKEN,
+  // TELEGRAM_WEBHOOK_SECRET, SETUP_TOKEN) are set separately with
+  // `wrangler secret put <NAME>` and must never be committed here.
+  "vars": {
+    "SUBTITLE_API_URL": "https://your-subtitle-search-api.example.com"
+  }
+}
