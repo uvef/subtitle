@@ -3,7 +3,6 @@
 A serverless Telegram bot, built for **Cloudflare Workers**, that lets users search for and download **Persian subtitles** for movies and TV series directly inside a Telegram chat.
 
 [![Deploy with Wrangler](https://img.shields.io/badge/deploy-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/workers/)
-[![CI](https://github.com/your-username/telegram-persian-subtitle-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/uvef/telegram-persian-subtitle-bot/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D22-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
